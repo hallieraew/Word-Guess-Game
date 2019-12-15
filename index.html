@@ -4,19 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Word Guessing Game</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel ="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<!-- need to link in both css sheets as well as JS sheet in the head of the doc -->
+<!-- need to link in both css sheet in the head of the doc -->
 
 <body>
 
     <div>
         <p id="directions">Press any key to get started!</p>
+        <h2 id="current-word"></h2>
         <p id="win-text">Wins:</p>
         <p id="guesses-left">Number of Guesses Remaining:</p>
         <p id="guesses">Letters Already Guessed:</p>
-    </div>    
+    </div>
 
     <!-- ^ important to call out the letters guess and used are in uppercase  -->
 
+    <!-- need to call js after html has loaded -->
+    <script src="assets/javascript/game.js"> </script>
 </body>
