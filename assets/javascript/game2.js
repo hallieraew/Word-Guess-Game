@@ -23,7 +23,6 @@
 // input needs to recognize all lower case to match array of letter options
 //need to hide the word until the letters are guessed
 // need to replace the empty space when correct letter is guessed 
-// once reach maximum number of guesses report loss    
-    // add tally to losses
+// once reach maximum number of guesses report loss  or once successful  
+    // add tally to losses or wins
     // reset for a new word
-// add to wins when user guesses correctly or incorrectly

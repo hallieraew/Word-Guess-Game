@@ -4,13 +4,14 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 // Create an array of possible words to guess - is there something for a random selector for the computer to pick a word?
 var win = 0;
 var lettersGuessed = 0;
-var guessLeft = 0;
+var guessLeft = 15;
 var correctLetters = " ";
 
 // create function for letter press
 
 
 document.onkeyup = function(event) {
+    guesses.innerHTML = event.key;
     var userGuess = event.key;
     var wordSelect = words[Math.floor(Math.random() * words.length)];
     console.log(wordSelect);
