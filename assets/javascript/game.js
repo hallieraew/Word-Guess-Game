@@ -3,35 +3,73 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 
 // Create an array of possible words to guess - is there something for a random selector for the computer to pick a word?
 var win = 0;
+var loss = 0;
 var lettersGuessed = 0;
 var guessLeft = 15;
-var correctLetters = " ";
+var correctLetters = [];
+var yourGuess = [];
+var inProgress = false;
 
 // create function for letter press
+var wordSelect = "";
 
+document.onkeyup = function (event) {
 
-document.onkeyup = function(event) {
-    guesses.innerHTML = event.key;
-    var userGuess = event.key;
-    var wordSelect = words[Math.floor(Math.random() * words.length)];
-    console.log(wordSelect);
+    if (inProgress) {
 
-    document.getElementById("current-word").innerHTML = blanks(words);
-    function blanks(words) {
-        for (var i = 0; i < words.length; i++) {
-            correctLetters += ("_ ");
-            return(correctLetters);
+        document.getElementById("guesses").innerHTML = event.key;
+        var yourGuess = event.key;
+
+        for (var i = 0; i < wordSelect.length; i++) {
+            if (wordSelect[i] === yourGuess) {
+                correctLetters[i] = yourGuess
+            }
+
         }
+
+        console.log(event);
+
+
+        if (yourGuess === wordSelect) {
+            wins++;
+
+
+        }
+        else if (yourGuess !== wordSelect) {
+            guessLeft--;
+        }
+        else if (guessLeft === 0) {
+            loss++;
+        }
+    }
+    else {
+
+        wordSelect = words[Math.floor(Math.random() * words.length)];
+        console.log(wordSelect);
+        inProgress = true;
+
+        for (var i = 0; i < wordSelect.length; i++) {
+            console.log(wordSelect)
+            correctLetters[i] = ("_");
+        }
+
+
+
+
+        // document.getElementById("current-word").innerHTML = (correctLetters);
+    };
+    document.getElementById("current-word").innerHTML = correctLetters;
+
+    // Create reference to text in html
+
+
+    document.getElementById('win-text').innerHTML = "Wins: " + win;
+    document.getElementById('loss-text').innerHTML = "Losses: " + loss;
+    document.getElementById('guesses-left').innerHTML = "Guesses left: " + guessLeft;
+    document.getElementById('guesses').innerHTML = "Letters already guessed: " + yourGuess;
+
+
 };
-document.getElementById("current-word").innerHTML = correctLetters;
-}
-// Create reference to text in html
-
-var directions = document.getElementById("directions");
-var winText = document.getElementById("win-text");
-var guessesLeft = document.getElementById("guesses-left");
-var guesses = document.getElementById("guesses");
-
 
 
 
