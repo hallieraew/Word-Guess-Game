@@ -24,15 +24,23 @@ document.onkeyup = function (event) {
             if (wordSelect[i] === yourGuess) {
                 correctLetters[i] = yourGuess
             }
-
         }
+        
 
-        console.log(event);
-
-
+    }
+    else {
+        
+        wordSelect = words[Math.floor(Math.random() * words.length)];
+        console.log(wordSelect);
+        inProgress = true;
+        
+        for (var i = 0; i < wordSelect.length; i++) {
+            console.log(wordSelect)
+            correctLetters[i] = ("_");
+        }
+        
         if (yourGuess === wordSelect) {
             wins++;
-
 
         }
         else if (yourGuess !== wordSelect) {
@@ -41,21 +49,6 @@ document.onkeyup = function (event) {
         else if (guessLeft === 0) {
             loss++;
         }
-    }
-    else {
-
-        wordSelect = words[Math.floor(Math.random() * words.length)];
-        console.log(wordSelect);
-        inProgress = true;
-
-        for (var i = 0; i < wordSelect.length; i++) {
-            console.log(wordSelect)
-            correctLetters[i] = ("_");
-        }
-
-
-
-
         // document.getElementById("current-word").innerHTML = (correctLetters);
     };
     document.getElementById("current-word").innerHTML = correctLetters;
