@@ -1,6 +1,7 @@
+//set all my global variables to be used throughout the game:
+
 var words = ["cow", "pig", "goat", "chicken", "rooster", "dog", "cat", "donkey", "horse"];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
 
 var win = 0;
 var loss = 0;
@@ -9,12 +10,14 @@ var guessLeft = 15;
 var correctLetters = [];
 var yourGuess = [];
 var inProgress = false;
+var wordSelect = "";
 
 
 // create function for letter press
-var wordSelect = "";
+
 
 document.onkeyup = function (event) {
+
 
     if (inProgress) {
 
@@ -33,7 +36,7 @@ document.onkeyup = function (event) {
             }
         }
         if (letterFound === false) {
-            lettersGuessed.push(yourGuess)
+            lettersGuessed.push(yourGuess.toUpperCase())
         }
 
         if (gameWon) {
@@ -60,10 +63,11 @@ document.onkeyup = function (event) {
         }
 
     };
-    document.getElementById("current-word").innerHTML = correctLetters;
 
-    // document.getElementById("button").addEventListener("click", reset());
+    // document.getElementById("button").addEventListener("click", reset()); -- tried to add a reset button but things did not pan out... 
 
+    //function to reset game if win or loss:
+    
     function reset() {
         inProgress = false;
         guessLeft = 15;
@@ -72,17 +76,12 @@ document.onkeyup = function (event) {
         correctLetters = [];
     }
 
-    // Create reference to text in html
-
+    // Create reference to update text in html
 
     document.getElementById('win-text').innerHTML = "Wins: " + win;
     document.getElementById('loss-text').innerHTML = "Losses: " + loss;
     document.getElementById('guesses-left').innerHTML = "Guesses left: " + guessLeft;
     document.getElementById('guesses').innerHTML = "Letters already guessed: " + lettersGuessed;
+    document.getElementById("current-word").innerHTML = correctLetters;
 
 };
-
-
-
-// if statements for if user guessses word to randomly select
-
