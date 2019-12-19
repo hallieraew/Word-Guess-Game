@@ -1,8 +1,6 @@
 //set all my global variables to be used throughout the game:
 
-var words = ["cow", "pig", "goat", "chicken", "rooster", "dog", "cat", "donkey", "horse"];
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+var words = ["cow", "pig", "goat", "chicken", "rooster", "dog", "cat", "donkey", "horse", "peacock", "turkey"];
 var win = 0;
 var loss = 0;
 var lettersGuessed = [];
@@ -13,8 +11,15 @@ var inProgress = false;
 var wordSelect = "";
 
 
-// create function for letter press
 
+// create function for letter press: I tried but it didnt work out. 
+
+// function removeCommas() {
+
+//     correctLetters.replace(/,/g, " ");
+//     document.getElementById('current-word').innerHTML = noComma;
+//     }
+    console.log(wordSelect);
 
 document.onkeyup = function (event) {
 
@@ -66,6 +71,7 @@ document.onkeyup = function (event) {
 
     // document.getElementById("button").addEventListener("click", reset()); -- tried to add a reset button but things did not pan out... 
 
+    
     //function to reset game if win or loss:
     
     function reset() {

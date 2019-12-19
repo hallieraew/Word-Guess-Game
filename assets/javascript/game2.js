@@ -19,10 +19,11 @@
 // list letters guessed so far
 // document to innerHTML for each field which needs to pull in value: i.e. win, loss, letters, guesses left
 // function for user input on keyboard
-// docment to uppercase letters for letters guessed
-// input needs to recognize all lower case to match array of letter options
+// figure out to get to uppercase
 //need to hide the word until the letters are guessed
 // need to replace the empty space when correct letter is guessed 
 // once reach maximum number of guesses report loss  or once successful  
     // add tally to losses or wins
     // reset for a new word
+// because we have full words, need to create for loops to check each letter in the array vs just one letter match up
+
